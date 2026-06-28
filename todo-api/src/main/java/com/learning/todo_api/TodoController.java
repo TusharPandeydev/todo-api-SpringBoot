@@ -1,0 +1,28 @@
+package com.learning.todo_api;
+
+import lombok.AllArgsConstructor;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
+@AllArgsConstructor
+@RestController
+public class TodoController {
+   // MAKE TODOSEVICE CLASS KYUKI TODOCONTROLLER USKE BINA KAAM NAHI KREG
+    ToDoService todoService;
+    @GetMapping("/list")
+    public List<ToDo>getAllTodos(){
+        return todoService.getTodoList();
+    }
+
+  @PostMapping("/add")
+    public ToDo addtodo(@RequestBody ToDo todo){ //return type todo
+        ToDo t=todoService.addTodo(todo.getTitle());
+        return t;
+  }
+  @DeleteMapping("/deleteID/{id}")
+    public String deleteTodo(@PathVariable int id){
+        todoService.deleteTodo(id);
+        return "given id->"+id+"is deleted";
+  }
+}
