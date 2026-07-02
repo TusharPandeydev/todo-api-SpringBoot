@@ -9,7 +9,8 @@ import java.util.List;
 @RestController
 public class TodoController {
    // MAKE TODOSEVICE CLASS KYUKI TODOCONTROLLER USKE BINA KAAM NAHI KREG
-    ToDoService todoService;
+    ToDoService todoService; // help of @allargconstructor refrence varibale ko iska object mil
+    // bhi jaata hai
     @GetMapping("/list")
     public List<ToDo>getAllTodos(){
         return todoService.getTodoList();
