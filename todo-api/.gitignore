@@ -31,3 +31,11 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Database ###
+*.mv.db
+*.trace.db
+*.db
+
+### Application Properties ###
+application.properties
