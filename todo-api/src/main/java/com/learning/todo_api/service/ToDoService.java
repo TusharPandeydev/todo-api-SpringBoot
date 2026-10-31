@@ -1,5 +1,7 @@
-package com.learning.todo_api;
+package com.learning.todo_api.service;
 
+import com.learning.todo_api.entity.ToDo;
+import com.learning.todo_api.repository.ToDoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,9 +1,10 @@
-package com.learning.todo_api;
+package com.learning.todo_api.controller;
 
+import com.learning.todo_api.service.ToDoService;
+import com.learning.todo_api.entity.ToDo;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 @AllArgsConstructor
 @RestController

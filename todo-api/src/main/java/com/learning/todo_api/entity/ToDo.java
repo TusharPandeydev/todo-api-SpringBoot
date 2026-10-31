@@ -1,4 +1,4 @@
-package com.learning.todo_api;
+package com.learning.todo_api.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
