@@ -8,7 +8,7 @@ This project demonstrates core backend engineering fundamentals, including 3-tie
 
 ## 🛠️ Tech Stack And Tools
 
-- **Language:** Java 17+
+- **Language:** Java 21
 - **Framework:** Spring Boot (Spring Web, Spring Data JPA)
 - **Database:** H2
 - **ORM Framework:** Hibernate
@@ -108,7 +108,7 @@ given id->1is deleted
 
 ### Prerequisites
 
-- Java 17 or higher
+- Java 21 or higher
 - Maven (optional, the Maven Wrapper `mvnw` is included)
 - Postman (for testing the endpoints)
 
@@ -133,6 +133,33 @@ given id->1is deleted
 
 ---
 
+## 🐳 Docker Support
+
+The application is containerized using Docker, so it can run on any machine without installing Java or Maven separately.
+
+### Dockerfile
+
+```dockerfile
+FROM eclipse-temurin:21-jre
+COPY target/todo-api-0.0.1-SNAPSHOT.jar app.jar
+ENTRYPOINT ["java", "-jar", "app.jar"]
+```
+
+| Instruction | Purpose |
+|-------------|---------|
+| `FROM` | Base image with Java 21 installed |
+| `COPY` | Copies the built JAR file into the image |
+| `ENTRYPOINT` | Command that starts the application |
+
+###  Run from Docker Hub (easiest)
+
+```bash
+docker pull usernamedoesnotexist/todo-api:latest
+docker run -p 8080:8080 usernamedoesnotexist/todo-api:latest
+```
+The API will be available at `http://localhost:8080`.
+
+
 ## 💡 Key Concepts Learned
 
 - **Layered Architecture:** Controller → Service → Repository
@@ -142,6 +169,7 @@ given id->1is deleted
 - **`@GeneratedValue(strategy = IDENTITY)`:** The database auto-generates the primary key
 - **`@RequestBody` & `@PathVariable`:** Extracting data from the request body and URL
 - **Lombok:** Annotations like `@Data`, `@AllArgsConstructor` and `@NoArgsConstructor` reduce boilerplate code
+- **Docker:** Containerized the application with a Dockerfile, built the image and ran it as a container with port mapping
 
 ---
 
