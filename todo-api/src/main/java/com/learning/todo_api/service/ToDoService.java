@@ -18,9 +18,9 @@ public class ToDoService{
     }
 
     public ToDo addTodo(String title){
-        ToDo t=new ToDo(null,title,false);
-        ToDo t1=toDoRepository.save(t);
-        return t1;
+        ToDo t=new ToDo();
+        t.setTitle(title);
+        return toDoRepository.save(t);
     }
 
     public void deleteTodo(int id){

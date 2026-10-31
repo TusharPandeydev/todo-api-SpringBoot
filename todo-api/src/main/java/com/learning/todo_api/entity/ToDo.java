@@ -1,9 +1,6 @@
 package com.learning.todo_api.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,7 +13,7 @@ public class ToDo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String title;
-    private Boolean isComplete;
+    private Boolean isComplete=false;
 
     // wrapper class null values accept kr skti hainn and primitve variables nahi krte accept null values
 

@@ -18,8 +18,8 @@ public class TodoController {
     }
 
   @PostMapping("/add")
-    public ToDo addtodo(@RequestBody ToDo todo){ //return type todo
-        ToDo t=todoService.addTodo(todo.getTitle());
+    public ToDo addtodo(@RequestBody String task ){ //return type todo
+        ToDo t=todoService.addTodo(task);
         return t;
   }
   @DeleteMapping("/deleteID/{id}")
